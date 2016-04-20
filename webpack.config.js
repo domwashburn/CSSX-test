@@ -2,6 +2,7 @@ module.exports = {
   entry: [
     './src/index.js'
   ],
+  devtool: 'source-map',
   output: {
     path: __dirname,
     publicPath: '/',
@@ -11,6 +12,11 @@ module.exports = {
     loaders: [{
       exclude: /node_modules/,
       loader: 'babel'
+    },
+    {
+      test: /(\.js|\.jsx)$/,
+      loader: 'cssx-loader',
+      exclude: /node_modules/
     }]
   },
   resolve: {
